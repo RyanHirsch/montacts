@@ -1,14 +1,12 @@
 import express from 'express';
-import logger, { name } from './logger';
-import expressBunyanLogger from 'express-bunyan-logger';
+import coreMiddleware from './middleware/core';
 
 const app = express();
+coreMiddleware(app);
 
-app.use(expressBunyanLogger({ name }));
 app.get('/', helloWorldHandler);
 
 function helloWorldHandler(req, res) {
-  logger.debug('working');
   res.json({ working: true });
 }
 
