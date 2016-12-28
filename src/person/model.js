@@ -36,6 +36,7 @@ const PersonSchema = new mongoose.Schema({
   },
   nickname: {
     type: String,
+    default: null,
   },
   streetAddress: {
     type: String,
@@ -56,14 +57,6 @@ const PersonSchema = new mongoose.Schema({
     type: Date,
     default: null,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+}, { timestamps: true });
 
 export default mongoose.model('person', PersonSchema);
