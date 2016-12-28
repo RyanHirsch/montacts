@@ -5,5 +5,5 @@ import bodyParser from 'body-parser';
 export default function(app) {
   app.use(expressBunyanLogger({ name }));
   app.use(bodyParser.json());
-  app.use(bodyParser.urlEncoded({ extended: true }));
+  app.use(bodyParser.urlencoded({ extended: true }));
 }
